@@ -1,11 +1,13 @@
 # Background
-This is a short code assignment that involves setting up a simple REST service that perform simple CRUD operations on 
-stocks in hypothetical portfolio(s). Clients of the REST API should be able to create new stock portfolios and add
-stock investments into these portfolios
+This is a short coding assignment that involves setting up a simple REST service that perform basic CRUD operations on 
+stock positions in hypothetical trading portfolio(s)
 
-As a bonus, provide a route where the user can see the total value of their stock holdings across all portfolios
+Clients of the REST API should be able to create new stock portfolios and add
+stock investments (called positions) into these portfolios
 
-*note* the data model is such that a Portfolio contains 0, 1 or multiple stock positions. A stock position have a `ticker` (the identifier),
+As a bonus, provide a API endpoint that shows the total value of stock positions in a given portfolio
+
+*note* the data model is such that a `Portfolio` contains 0, 1 or multiple `Stock` positions. A stock position have a `ticker` (the identifier),
 and a `market value` (how much in US dollar does one own of the stock)
 
 In other words - the core data model is such that:
