@@ -48,17 +48,33 @@ class Stock {
     "marketValue": 100
   },
   {
-    "ticker": "TLSA",
+    "ticker": "TSLA",
     "marketValue": 500
   }
 ]
 ```
 
 ## Bonus Question
-Create a route that aggregates the market value of all positions in a given portfolio
- - `/GET /api/v1/portfolios/{portfolioName}/net-asset-value`
+Create a route that aggregates the market value of all positions grouped by portfolio
+ - `/GET /api/v1/portfolios/net-asset-value`
  
 For example, if a portfolio contains two stock positions: $100 of AAPL and $200 of GOOG, then the net asset value is $300
+
+This REST endpoint should return the results as a JSON array like the one below:
+
+Example:
+```json
+[
+  {
+    "portfolioName": "my-portfolio-1",
+    "marketValue": 300
+  },
+  {
+    "portfolioName": "my-portfolio-2",
+    "marketValue": 200
+  }
+]
+```
 
 ## Project Setup / Runtime Requirement
 The entire project should be simply runnable with a single maven or gradle command upon `git clone`
@@ -69,5 +85,5 @@ Create a private repository with the completed assignment. Reply to earlier emai
 # Preferred Tools
  - Spring Boot is highly preferred, but you may also use `Dropwizard` a similar J2EE framework
  - Recommended IDE: Use Intellij IDEA
- - Database: we recommend using an in-memory database like h2
+ - Database: we recommend using an in-memory database like h2, but you can also use a concurrent `HashMap`
 
